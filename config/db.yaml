@@ -1,0 +1,14 @@
+mysql:
+  username: root
+  password: wzy20040525
+  addr: 127.0.0.1
+  port: 3306
+  db: chatroom_users
+  charset: utf8mb4
+  connMaxIdleTime: 1h
+  connMaxLifeTime: 1h
+  place: Asia%2FShanghai
+  maxIdleConns: 10
+  maxOpenConns: 5
+
+
