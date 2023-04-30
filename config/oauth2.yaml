@@ -20,7 +20,6 @@ oauth2:
       # !!注意 http/https 不要写错!!
       addr: http://localhost
       port: 9093
-      # 权限范围
       # 数组类型
       # 可以配置多个权限
       # 颁发的 access_token 中会包含该值 资源方可以对该值进行验证
