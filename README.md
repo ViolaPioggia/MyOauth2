@@ -115,7 +115,7 @@ type User struct {
 	"refresh_token": "NJQ4MDAZM2YTZGI0MI01OGJILWIZNMMTMMRHMDQ0NTJMMZMY",
 	"scope": "all",
 	"token_type": "Bearer"
-}```
+}
 ```
 
 
