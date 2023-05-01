@@ -1,28 +1,20 @@
 session:
   name: session_id
-  secret_key: "addasdada"
+  secret_key: "asdfsdaf"
   max_age: 1200
 
 oauth2:
   accessTokenExp: 1
   refreshTokenExp: 1
   isGenerateRefresh: true
-  jwt_signed_key: "k2bjI75JJHolp0i"
+  jwt_signed_key: "qwefsdfa1"
   client:
 
-    # 客户端id 必须全局唯一
     - id: test_client_1
-      # 客户端 secret
       secret: test_secret_1
-      # 应用名 在页面上必要时进行显示
       name: 测试应用1
-      # 客户端 domain
-      # !!注意 http/https 不要写错!!
       addr: http://localhost
       port: 9093
-      # 数组类型
-      # 可以配置多个权限
-      # 颁发的 access_token 中会包含该值 资源方可以对该值进行验证
 
 
     - id: test_client_2

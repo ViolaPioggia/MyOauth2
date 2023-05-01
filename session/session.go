@@ -22,13 +22,6 @@ func Setup() {
 		MaxAge:   session.MaxAge,
 		HttpOnly: true,
 	}
-	// or use the redis store
-	// store, _ = redistore.NewRediStore(yaml.Cfg.Redis.Default.Db, "tcp", yaml.Cfg.Redis.Default.Addr, "", []byte("secret-key"))
-	// if err != nil {
-	//     log.Fatal(err)
-
-	//     return
-	// }
 }
 
 func Get(r *http.Request, name string) (val interface{}, err error) {

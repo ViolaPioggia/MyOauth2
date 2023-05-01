@@ -1,6 +1,6 @@
 mysql:
   username: root
-  password: root
+  password: wzy20040525
   addr: 127.0.0.1
   port: 3306
   db: chatroom_users

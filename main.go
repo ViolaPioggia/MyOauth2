@@ -50,6 +50,7 @@ func main() {
 	}
 	mgr.MapClientStorage(clientStore)
 
+	//另外初始化gin路由
 	//err := api.InitRouter()
 	//if err != nil {
 	//	fmt.Println("初始化路由失败")
@@ -105,7 +106,7 @@ func main() {
 		data := map[string]interface{}{
 			"expires_in": int64(token.GetAccessCreateAt().Add(token.GetAccessExpiresIn()).Sub(time.Now()).Seconds()),
 			"client_id":  token.GetClientID(),
-			"user_id":    cli.GetUserID(),
+			"user_id":    token.GetUserID(),
 			"domain":     cli.GetDomain(),
 		}
 		e := json.NewEncoder(w)
@@ -164,9 +165,6 @@ func userAuthorizeHandler(w http.ResponseWriter, r *http.Request) (userID string
 		}
 		session.Set(w, r, "RequestForm", r.Form)
 
-		// 登录页面
-		// 最终会把userId写进session(LoggedInUserID)
-		// 再跳回来
 		w.Header().Set("Location", "/login")
 		w.WriteHeader(http.StatusFound)
 
@@ -189,7 +187,6 @@ func passwordAuthorizationHandler(ctx context.Context, clientID, username, passw
 }
 
 func loginHandler(w http.ResponseWriter, r *http.Request) {
-
 	if r.Method == "POST" {
 		if r.Form == nil {
 			if err := r.ParseForm(); err != nil {
@@ -198,7 +195,6 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 		session.Set(w, r, "LoggedInUserID", r.Form.Get("username"))
-
 		w.Header().Set("Location", "/auth")
 		w.WriteHeader(http.StatusFound)
 		return
