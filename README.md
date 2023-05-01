@@ -66,9 +66,9 @@ oauth2:
 package model
 
 type User struct {
-   Username int64  `form:"username" json:"username" binding:"required"`
-   Password string `form:"password" json:"password" binding:"required"`
-   ID       int64  `form:"id" json:"id"`
+	Username int64  `form:"username" json:"username" binding:"required"`
+	Password string `form:"password" json:"password" binding:"required"`
+	ID       int64  `form:"id" json:"id"`
 }
 ```
 
@@ -78,9 +78,9 @@ type User struct {
 
 1，`GET`       `http://localhost:9096/oauth/authorize` 鉴权
 
-![image-20230501223606954](C:\Users\ViolaPioggia\AppData\Roaming\Typora\typora-user-images\image-20230501223606954.png)
+![image-20230501223606954](docs/image-20230501223606954.png)
 
-![image-20230501223842802](C:\Users\ViolaPioggia\AppData\Roaming\Typora\typora-user-images\image-20230501223842802.png)
+![image-20230501223842802](docs/image-20230501223842802.png)
 
 获得code=MZYXNJK0ZGMTNZBHMS0ZZWZJLTKWNMUTMGQ4MZBLOTU1NGI4
 
@@ -88,7 +88,7 @@ type User struct {
 
 2，`POST`       `http://localhost:9096/oauth/token`  code 获取 token
 
-![image-20230501224012964](C:\Users\ViolaPioggia\AppData\Roaming\Typora\typora-user-images\image-20230501224012964.png)
+![image-20230501224012964](docs/image-20230501224012964.png)
 
 响应得到
 
@@ -106,7 +106,7 @@ type User struct {
 
 3,`POST`       `http://localhost:9096/oauth/token`  password 直接获取 token，安全系数相对较低
 
-![image-20230501224337936](C:\Users\ViolaPioggia\AppData\Roaming\Typora\typora-user-images\image-20230501224337936.png)
+![image-20230501224337936](docs/image-20230501224337936.png)
 
 ```json
 {
@@ -124,7 +124,7 @@ type User struct {
 
 
 
-![image-20230501224558504](C:\Users\ViolaPioggia\AppData\Roaming\Typora\typora-user-images\image-20230501224558504.png)
+![image-20230501224558504](docs/image-20230501224558504.png)
 
 ```json
 {
@@ -140,8 +140,8 @@ type User struct {
 
 
 
-1. ![image-20230501224925887](C:\Users\ViolaPioggia\AppData\Roaming\Typora\typora-user-images\image-20230501224925887.png)
-2. ![image-20230501224948242](C:\Users\ViolaPioggia\AppData\Roaming\Typora\typora-user-images\image-20230501224948242.png)
+1. ![image-20230501224925887](docs/image-20230501224925887.png)
+2. ![image-20230501224948242](docs/image-20230501224948242.png)
 
 ```json
 {
@@ -150,3 +150,10 @@ type User struct {
 	"expires_in": 6977,
 	"user_id": ""
 }
+```
+
+
+
+------
+
+此项目多为个人使用，若有侵权，请联系本人。
